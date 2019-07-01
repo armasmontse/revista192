@@ -1,0 +1,19 @@
+#notfound {
+	.ttl {
+		text-align: center;
+		margin-bottom: 40px;
+		text-transform: capitalize;
+		color: #303030;
+		font-size: 48px;
+		font-family: "PlayfairDisplay", serif;
+		font-weight: normal;
+		padding: 100px 0;
+		line-height: 150%;
+	}
+	&.home .header-container {
+		height: auto;
+	}
+	.main-background {
+		min-height: calc(100vh - 40px);
+	}
+}

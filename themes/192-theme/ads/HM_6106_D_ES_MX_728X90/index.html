@@ -1,0 +1,177 @@
+<!doctype html>
+<html><head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<meta name="ad.size" content="width=728,height=90">
+<title>H&amp;M Standard banner</title>
+<link rel="stylesheet" href="css/style.css"/>
+<script type="text/javascript" src="//ds.serving-sys.com/BurstingScript/EBLoader.js"></script>
+<script type="text/javascript">
+
+	//
+	//***** SETTINGS *****
+	//
+
+	var clickTag="http://bs.serving-sys.com/BurstingPipe/adServer.bs?cn=tf&c=20&mc=click&pli=19335819&PluID=0&ord=[timestamp]";
+
+	var stageW//no need to set this
+	var stageH//no need to set this
+	//
+	var imgNo = 1;
+	//
+	var loops = 9999;
+	//
+	var lboard = false; //if leaderboard then display copy
+	//
+	var border = true;
+	var bcolor = '#e9e9e9';
+	//
+	var delay = 3.5;
+	//
+	//***** DO NOT CHANGE *****
+	var etp;
+	var transitionEvent = whichTransitionEvent();
+	var fadeTime = 1;
+	//
+	//***** LOGO SETTINGS *****
+	//
+	var bigLogo = false //in the 728x90 is the full height logo required?
+	var ctaLogo = false; //If there is a CTA under the logo make this true
+	var hasMenu = false; //If there is a CTA under the logo make this true
+	var hasMenuY = 30; //If there is a CTA under the logo how much to raise it up by
+	var highRes = false; //for mobile ipad sizes
+	//
+	//If you need to move the H&M logo manually then make the override true then put in the x/y/width size below
+	var overrideLogo = false;
+	var posX = 0; //padding from the right
+	var posY = 0; //padding from the bottom
+	var posHeight = 150;
+	//
+	//***** DO NOT AMEND *****
+	//
+	var curImg = 2;
+	var prevImg = 1;
+	var curLoop = 0;
+	var initialized = false;
+	//
+	function initEB(){
+		if (!EB.isInitialized()){
+			EB.addEventListener(EBG.EventName.EB_INITIALIZED, startAd);
+		}else{
+			startAd();
+		}
+	}
+
+	function startAd(){
+		var container = document.getElementById("back");
+		stageW = container.width;
+		stageH = container.height;
+
+		console.log("h "+stageH+" w "+stageW)
+		//
+        // document.getElementById("banner").style.width = stageW+"px";
+        // document.getElementById("banner").style.height = stageH+"px";
+		//
+		logoMc = "logo";
+		LogoSizer(stageW, stageH, bigLogo, overrideLogo, posX, posY, posHeight, ctaLogo, hasMenu, hasMenuY, highRes, logoMc)
+		//
+		if(lboard){
+			document.getElementById("title").style.width = stageW+"px";
+        	document.getElementById("title").style.height = stageH+"px";
+			document.getElementById("title").style.display = "block";
+			document.getElementById("title").style.background = "url('frames/title.png')"
+			//
+			var title = document.getElementsByClassName('title')[0];
+			title.className+= ' show';
+		}
+		//
+        if(border){
+            document.getElementById("border").style.width = (stageW-2)+"px";
+            document.getElementById("border").style.height = (stageH-2)+"px";
+            document.getElementById("border").style.borderColor = bcolor;
+			document.getElementById("border").style.display = "block";
+        }else{
+            document.getElementById("border").style.display = "none";
+        }
+        //
+		document.getElementById("back").src = "frames/frame_"+1+".jpg";
+		document.getElementById("top").src = "frames/frame_"+2+".jpg";
+		//
+		etp = document.getElementsByClassName('top')[0];
+		/* Listen for a transition! */
+
+		transitionEvent && etp.addEventListener(transitionEvent, startAnimation);
+		//
+		if(imgNo>1){myVarSTD = setTimeout(function(){etp.className= 'top show'},delay*1000)};
+
+    }
+
+
+	function startAnimation(){
+		console.log("reset")
+		etp.removeEventListener(transitionEvent, startAnimation);
+		if(imgNo>1){
+			if(curLoop<loops){
+				if(curImg<imgNo){
+					prevImg = curImg
+					curImg++
+				}else{
+					prevImg = imgNo
+					curImg = 1;
+					curLoop++
+					console.log("LOOP");
+				}
+				document.getElementById("back").src = "frames/frame_"+prevImg+".jpg";
+				document.getElementById("top").src = "frames/frame_"+curImg+".jpg";
+				//console.log("top hide, "+curImg)
+				//document.getElementsByClassName('logo')[0]
+				etp.className= 'top hide';
+
+				myVarSTD = setTimeout(function(){
+					//console.log("top show, "+(curImg % 2 == 0))
+					document.getElementsByClassName('logo').className = (curImg % 2 == 0)?'logo show':'logo hide'
+					etp.className= 'top show';
+					transitionEvent && etp.addEventListener(transitionEvent, startAnimation);
+				},delay*1000);
+
+			}
+		}
+	}
+
+
+	/* From Modernizr */
+	function whichTransitionEvent(){
+		var t;
+		var el = document.createElement('fakeelement');
+		var transitions = {
+			'transition':'transitionend',
+			'OTransition':'oTransitionEnd',
+			'MozTransition':'transitionend',
+			'WebkitTransition':'webkitTransitionEnd'
+		}
+
+		for(t in transitions){
+			if( el.style[t] !== undefined ){
+				return transitions[t];
+			}
+		}
+	}
+
+</script>
+<script type="text/javascript" src="http://ds.serving-sys.com/BurstingScript/EBLoader.js"></script>
+</head>
+<body onload="initEB();">
+	<div id="ad">
+		<div id="banner">
+			<div id="frames">
+				<img id="back" src="frames/frame_1.jpg"/>
+	            <img class="top" id="top"/>
+	        </div>
+            <div class="title" id="title"></div>
+            <div id="logo"></div>
+            <div class="border" id="border"></div>
+		</div>
+		<a href="javascript:window.open(window.clickTag); void(0);" id="clickScreen"></a>
+	</div>
+</body>
+</html>

@@ -1,0 +1,81 @@
+/*
+Theme Name: 192-theme
+Author: El Cultivo
+Author URI: http://elcultivo.mx
+Version: 0.0.2
+*/
+
+/**
+* 192
+* ---------------------
+*
+* Desarrollado por El Cultivo
+* http://elcultivo.mx
+*
+* Para desarrollar tu tema copia este folder y renómbralo con tu tema
+*
+*
+* Hecho con la version
+* @version 0.0.1
+* del Mazorca Sass de El Cultivo
+*
+* @author El Cultivo
+*/
+
+/*
+
+ */
+@charset "UTF-8";
+
+//===Vendor===//
+//Para el Grid de bootstrap
+@import "vendor/bootstrap/assets/stylesheets/bootstrap/_variables";
+@import "vendor/bootstrap/assets/stylesheets/bootstrap/mixins/_grid-framework";
+@import "vendor/bootstrap/assets/stylesheets/bootstrap/mixins/_grid";
+
+//===Core===//
+@import "../core/functions/_functions";
+@import "../core/mixins/preConfigMixins/_preConfigMixins";
+@import "../core/mixins/_mixins";//
+@import "../core/base/_base";
+
+//===Theme===//
+@import "config/_config";
+
+//Css begins compling here
+
+@import "../core/helpers/_helpers";//
+@import "../core/debug/_debug";//
+
+@import "_elements";
+@import "_grid";//
+@import "_components";
+@import "_modules";
+
+.index__ad-horizontal{
+
+    // padding: 0 50px;
+    // margin-bottom: 60px;
+
+    @media only screen and (max-width: 320px){
+        margin-left: -20px;
+    }
+}
+
+// .intrinsic-container{
+//
+//     display: block;
+//     margin: 0 auto;
+//     max-width: 728px;
+//     max-height: 90px;
+//     overflow-y: hidden;
+//
+//     & iframe{
+//
+//         min-width: 100%;
+//         width: 100px;
+//         *width: 100%;
+//
+//     }
+//
+// }

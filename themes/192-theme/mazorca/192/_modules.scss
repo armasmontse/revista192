@@ -1,0 +1,32 @@
+//_________________________ Modules _________________________ \\
+
+
+//--------------------- Generales ---------------------
+
+@import "modules/general/_footer";//
+@import "modules/general/_header";//
+@import "modules/general/_home";//
+@import "modules/general/_moda";//
+@import "modules/general/_belleza";//
+@import "modules/general/_share";//
+@import "modules/general/_suscribete";//
+@import "modules/general/_interview";//
+@import "modules/general/_prive";//
+@import "modules/general/_notfound";//
+@import "modules/general/_video";//
+
+//--------------------- Medias ---------------------
+
+//@include mediaMixin(.mediaMain);// en _components.scss
+//@include mediaMixin(.mediaModal);// en _components.scss
+@import "modules/medias/_friends-family";
+@import "modules/medias/_print";
+@import "modules/medias/_single";
+@import "modules/medias/_slider";
+
+//--------------------- Menus ---------------------
+
+@import "modules/menus/_menuMain";
+@import "modules/menus/_menuLang";
+
+//--------------------- Single ---------------------

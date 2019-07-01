@@ -1,0 +1,12 @@
+@mixin tagsComponent {
+	text-align: center;
+	.navegacion, .tag {
+		display: inline-block;
+		color: #888888;
+		text-align: center;
+		font-size: 11px;
+		font-family: f(sans);
+		font-weight: 200;
+		margin-bottom: s(3/2);
+	}
+}

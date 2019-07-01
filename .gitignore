@@ -1,0 +1,12 @@
+
+*.DS_Store
+/uploads/
+/.sass-cache/
+*.scssc
+config.codekit
+config.codekit3
+/.codekit-cache/
+
+/node_modules/
+gulpfile.js
+package.json

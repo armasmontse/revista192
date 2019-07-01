@@ -1,0 +1,271 @@
+.prive {
+	@include pageComponent(gris,blanco);
+
+	.container {
+		.header-container {
+			margin-bottom: 60px;
+			max-width: 1160px;
+		}
+		.head {
+			text-align: center;
+		}
+		.logo {
+			left: 0;
+		}
+		.ttl {
+			display: inline-block;
+			text-align: center;
+			margin-bottom: 40px;
+			text-transform: capitalize;
+		}
+		.creditos {
+			text-align: center;
+			margin-bottom: 40px;
+			.rol {
+				font-size: 14px;
+				font-family: f(serif);
+				margin-bottom: 10px;
+			}
+			.nombre {
+				font-size: 14px;
+			    font-weight: bold;
+				font-family: f(sans);
+				text-transform: uppercase;
+				letter-spacing: 2px;
+			}
+			.lugar {
+				font-size: 12px;
+				font-family: f(serif);
+				text-transform: uppercase;
+				letter-spacing: 2px;
+				line-height: 200%;
+			}
+			.back {
+				display: inline-block;
+				font-size: 10px;
+				font-family: f(sans);
+				margin-top: 30px;
+				letter-spacing: 1px;
+				text-transform: uppercase;
+				text-decoration: none;
+			}
+		}
+		.row {
+			margin-bottom: 80px;
+			.elemento {
+				margin-bottom: 30px;
+				.imagen {
+					display: none;
+					@include over(sm) {
+						display: block;
+					}
+					&.imgtag{
+						height: auto;
+						display: block;
+						@include over(sm) {
+							display: none;
+						}
+					}
+					height: 370px;
+					@include bg-cover();
+					margin-bottom: s(3/4);
+					width: 100%;
+				}
+			}
+			.elementos {
+				position: relative;
+				.ano {
+					top: 0;
+					left: -20px;
+					position: absolute;
+			    	@include under(1320px) {
+			    		left: 0;
+			    		position: relative;
+			    	}
+				}
+				.textual p {
+					font-size: 14px;
+					font-family: f(serif);
+					margin-bottom: 5px;
+				}
+			}
+		}
+
+	}
+
+	&.single {
+		.container {
+			width: 100%;
+			max-width: 952px;
+			.imagen {
+				margin-bottom: 0px;
+				&.vertical {
+					width: 70%;
+					height: auto;
+					text-align: left;
+			    	@include under(b(md)) {
+						width: 100%;
+			    	}
+				}
+				&.horizontal {
+					width: 100%;
+					height: auto;
+				}
+			}
+			.padding-row {
+				padding-left: 10.3%;
+		    	@include under(b(md)) {
+			    	padding: 0;
+		    	}
+				.col {
+					padding-top: 65px;
+					margin-bottom: 20px;
+			    	@include under(b(sm)) {
+				    	padding-top: 0;
+			    	}
+					.check {
+						display: inline-block;
+					}
+					.label {
+						display: inline-block;
+						font-size: 14px;
+						line-height: 150%;
+						font-family: f(serif);
+						vertical-align: top;
+					}
+					.price {
+						margin-top: 5px;
+						display: block;
+						font-size: 13px;
+						font-family: f(sans);
+						letter-spacing: 0.5px;
+					}
+					.col-md-6 {
+						margin-bottom: 20px;
+					}
+					&.col-md-4 {
+						background-image: url(../../images/border.gif);
+						background-repeat: no-repeat;
+						background-position: 20px 0px;
+				    	@include under(b(sm)) {
+					    	background: none;
+					    	margin-top: 20px;
+				    	}
+					}
+				}
+				.comprar .paypal-button {
+					border: none;
+					cursor: pointer;
+					display: inline-block;
+					font-size: 14px;
+					font-weight: 600;
+					font-family: f(sans);
+					background: transparent;
+					text-transform: uppercase;
+					text-decoration: underline;
+					-webkit-appearance: none;
+					:hover {
+						opacity: 0.7;
+					}
+				}
+				.meta {
+					font-size: 14px;
+					line-height: 150%;
+					font-family: f(serif);
+					letter-spacing: 0.75px;
+				}
+			}
+		}
+
+	}
+
+
+	&, .main-background,  .login-page {
+		min-height: 100%;
+	}
+
+	&.login-registration-page {
+
+		&, .main-background, .login-page {
+			height: 100%;
+		}
+
+		.header-container {
+			position: absolute;
+		}
+
+		.login-page {
+			background-repeat: no-repeat;
+			@include bg-cover(right);
+		}
+
+		.login-container {
+			@include center('xy');
+			max-width: 345px + s(1/2);
+			width: 100%;
+			border-radius: 4px;
+			&.hover {
+				background-color: rgba(255, 255, 255, 0.3);
+			}
+			@include under(420px, 'height') {
+				top: 62%;
+			}
+		}
+
+		.mensajes {
+			text-align: center;
+		}
+
+		.login, .register {
+			padding: s();
+			input[type="text"],
+			input[type="password"],
+			input[type="email"] {
+				@extend %input;
+			}
+			label {
+				display: none;
+			}
+
+			input[type="submit"],
+			.suscribirse,
+			.ingresar,
+			.recuperar a{
+				background: none;
+			    border: none;
+			    margin: auto;
+			    display: block;
+			    box-shadow: none;
+			    text-decoration: underline;
+			    text-transform: uppercase;
+			    text-align: center;
+			    outline: none;
+			    -webkit-appearance: none;
+			    -webkit-font-smoothing: antialiased;
+			    border-radius: 0;
+			    font-weight: 600;
+			    text-shadow: none;
+			    cursor: pointer;
+			    line-height: 1;
+			    padding: .618em 1em;
+			    color: c(negro);
+			    font-family: f(sans);
+			    font-size: 13px;
+			    margin-bottom: 1.618em;
+			}
+
+			.suscribirse,
+			.ingresar,
+			.recuperar a{
+				font-weight: normal;
+			}
+
+			.recuperar a{
+				text-transform: none;
+				text-decoration: none;
+				margin-bottom: 0;
+			}
+		}
+	}
+
+}

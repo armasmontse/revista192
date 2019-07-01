@@ -1,0 +1,70 @@
+.belleza {
+	@include pageComponent(rosita);
+
+	&__ttl {
+		@extend %cat-single-ttl-sans;
+	}
+
+	&__sbttl {
+		color: #000000;
+		font-size: 16px;
+		font-family: f(serif);
+		font-weight: 400;
+		font-style: italic;
+		text-align: center;
+		margin-bottom: s(3/2);
+	}
+
+	.tags {
+		@include tagsComponent;
+	}
+
+	.p {
+		position:relative;
+		margin-bottom: s(1/2);
+		text-align: center;
+		p {
+			font-size: 16px;
+			margin-left: auto;
+			margin-right: auto;
+			max-width: 750px;
+			margin-bottom: s(5/4);
+		}
+		img {
+			margin-bottom: s(5/4);
+		}
+	}
+
+	.ano {
+		$s: 12px;
+		position: absolute;
+		font-size: $s;
+		top: 0;
+		left: $s * -2;
+	}
+
+	.share {
+		margin-bottom: s();
+	}
+
+	.mes {
+		text-align: center;
+		color: #000000;
+		font-family: 'SharpSansNoOne-Bold';
+		font-size: 23px;
+		letter-spacing: 7px;
+		text-transform: uppercase;
+		text-decoration: underline;
+		font-weight: normal !important;
+		margin-bottom: s();
+	}
+
+	.divisor {
+		 width: 100%;
+		 max-width: 100%;
+	}
+
+	.anterior {
+		@include anterioresComponent(rosita);
+	}
+}

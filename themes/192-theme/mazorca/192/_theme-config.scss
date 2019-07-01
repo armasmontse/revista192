@@ -1,0 +1,6 @@
+$theme:	(
+	name: '_blank', 
+	version: '0.0.1'
+);
+@debug type-of($theme);
+@debug $theme;

@@ -1,0 +1,16 @@
+%paragraph{
+	color: c();
+	font-family: f(sans);
+	font-weight: normal;
+	font-size: 	s();
+	line-height: lh();
+}
+
+%paragraph-page {
+	color: c();
+	font-size: 15px;
+	font-family: f(serif);
+	line-height: 1.618;
+	text-align: justify;
+	text-transform: none;
+}

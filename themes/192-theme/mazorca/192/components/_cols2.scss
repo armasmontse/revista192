@@ -1,0 +1,8 @@
+@mixin cols2{
+   width: 40%;
+   width: calc(50% - #{$serif-content-font-size*lh()/2});
+   @include respond-to(xs-plus){
+      width: 100%;
+      margin-left: 0;
+   }
+}

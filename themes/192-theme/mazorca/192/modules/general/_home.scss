@@ -1,0 +1,112 @@
+.home {
+	@include clearfix;
+	min-height: 100%;
+
+	.body-gradient {
+		@include clearfix;
+		@include bg-gradient(blanco, gris-home, 150%);
+		height: 100%;
+		padding: s();
+	}
+
+	.main-background {
+		background-color: c(blanco);
+	}
+
+	.section-content {
+		margin-bottom: s(2);
+		@include under(sm) {
+			margin-bottom: s(3/2);
+		}
+		padding-left: s(3/2, p);
+		padding-right: s(3/2, p);
+	}
+
+	.cta {
+	    width: 100%;
+	    text-align: center;
+	    margin-bottom: s(3/2);
+	    .followus {
+		    color: #333333;
+		    cursor: pointer;
+		    font-family: 'Playfair Display', serif;
+		    font-size: s(3/2);
+		    @include under(sm) {
+		    	font-size: s();
+		    }
+	    }
+	}
+
+	.articulo {
+		@include articulo;
+		.imagen {
+			max-width: auto;
+		}
+	}
+
+	// Esto era de la versión vieja...
+
+	// .friends-family {
+	// 	p {
+	// 		max-width: 420px;
+	// 		text-align: center;
+	// 		margin-left: auto;
+	// 		margin-right: auto;
+	// 		margin-bottom: s(7);
+	//
+	// 	}
+	// }
+
+	// .family-friends { @debug 'refactorizar ff del home';
+	// 	margin-left: auto;
+	// 	margin-right: auto;
+	// 	margin-bottom: s(13/2);
+	// 	max-width: 736px;
+	// 	text-align: center;
+	// 	.imagen {
+	// 		cursor: pointer;
+	// 		display: block;
+	// 		margin-bottom: s();
+	// 		max-width: 100%;
+	// 		@include under(sm) {
+	// 			margin-left: auto;
+	// 		    margin-right: auto;
+	// 		    width: calc(100% - #{s(5)});
+	// 		}
+	// 	}
+	// 	.text-container {
+	// 		margin-left: auto;
+	// 		margin-right: auto;
+	// 		max-width: 330px;
+	// 		.ttl {
+	// 			cursor: pointer;
+	// 			font-size: 33px;
+	// 			font-family: f(serif);
+	// 			font-weight: normal;
+	// 			margin-bottom: s();
+	// 		}
+	// 		.p {
+	// 			font-size: 14px;
+	// 			font-family: f(sans);
+	// 		}
+	// 	}
+	// }
+
+
+
+}
+
+@if $debug == true {
+	.home {
+		.header {
+			background-color: c(aqua);
+
+		}
+	}
+
+		.col-md-3, .col-md-6, .col-xs-12 {
+			background-color: c(verdiazul);
+			height: 500px;
+		}
+
+}

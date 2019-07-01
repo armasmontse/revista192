@@ -1,0 +1,24 @@
+@charset "UTF-8";
+/*
+Theme Name: 192-theme
+Author: El Cultivo
+Author URI: http://elcultivo.mx
+Version: 0.0.1
+*/
+/**
+* 192
+* ---------------------
+*
+* Desarrollado por El Cultivo
+* http://elcultivo.mx
+*
+* Para desarrollar tu tema copia este folder y renómbralo con tu tema
+*
+*
+* Hecho con la version
+* @version 0.0.1
+* del Mazorca Sass de El Cultivo
+*
+* @author El Cultivo
+*/
+@import "css/192/mazorca.css";

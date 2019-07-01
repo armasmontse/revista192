@@ -1,0 +1,20 @@
+
+
+.menuLang {
+		width: 25%;
+		display: none;
+		text-align: center;
+	.lang-item {
+		display: inline-block;
+		margin-right: 10px;
+		.lang-link {
+			cursor: pointer;
+		    font-size: 14px;
+		    font-weight: 600;
+			font-family: "SharpSans", sans-serif;
+		}
+		&.active .lang-link {
+			text-decoration: underline;
+		}
+	}
+}

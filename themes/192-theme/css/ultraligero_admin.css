@@ -1,0 +1,23 @@
+.ancho_100  { width: 100%;}
+.ancho_180  { width: 150px;}
+.ancho_auto { width: calc(100% - 150px);}
+.thumbnail_holder img { box-shadow: 0px 0px 5px #ccc; display:inline-block;}
+.thumbnail_holder { position: relative; width: 100px;}
+.thumbnail_holder .reset { 
+	top: -3px;
+	right: -6px;
+	color: #000;
+	cursor: pointer;
+	padding: 3px 4px;
+	font-size: 10px;
+	position: absolute;
+	background: #fff;
+	text-align: center;
+	line-height: 100%;
+	box-shadow: 0px 0px 5px #ccc;
+	border-radius: 7px;
+}
+.thumbnail_holder .reset:hover { background: #ccc;}
+.warn { color: #a92525;}
+#table__galeria .tr_sortable { background: #fff;}
+#table__galeria .shadow { box-shadow: 0px 0px 8px #ccc; border-radius: 6px; padding: 10px 0 0 10px;}

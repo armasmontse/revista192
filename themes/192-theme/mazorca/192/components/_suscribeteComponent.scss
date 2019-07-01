@@ -1,0 +1,66 @@
+@mixin suscribeteComponent($color: base) {
+	text-align: center;
+	width: 100%;
+	margin-bottom: s(4);
+	.tt, .ttl a, .cta, .comprar, .descripcion {
+		color: c($color);
+		font-family: f(sans);
+		@include under(sm) {
+			margin-left: auto;
+			margin-right: auto;
+			width: 90%;
+		}
+	}
+
+	.ttl {
+		margin-bottom: s(2);
+		@include under(sm) { margin-bottom: s(5/2);}
+
+		a {
+			display: block;
+			font-size: 48px;
+			@include under (sm) { font-size: 40px;}
+			font-family: f(serif);
+			font-weight: 400;
+			text-decoration: none;
+		}
+	}
+
+	.cta {
+		font-size: 16px;
+		font-weight: 600;
+		margin-bottom: s(2);
+		@include under(sm) { margin-bottom: s(2/3);}
+		text-transform: uppercase;
+	}
+
+	.comprar {
+		display: block;
+		font-size: 18px;
+		margin-bottom: s(7/4);
+		@include under(sm) { margin-bottom: s(7/8);}
+		text-decoration: underline;
+		text-transform: uppercase;
+	}
+
+	.descripcion {
+		font-family: f(sans);
+		&, & p{
+			margin-bottom: s();
+		}
+	}
+	.buy-form{
+		input{
+			background-color: white;
+			display: inline-block;
+			padding: s()/4;
+			cursor: pointer;
+			font-size: inherit;
+			color: inherit;
+			margin-bottom: s();
+			&:hover{
+				font-weight: bold;
+			}
+		}
+	}
+}

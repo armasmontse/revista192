@@ -1,0 +1,42 @@
+//_________________________ Grid _________________________ \\
+
+
+// Usando el grid de Bootstrap
+@import "vendor/bootstrap/assets/stylesheets/bootstrap/_grid";
+//Modificaciones al grid
+
+$reduced-width: 730px;
+$container-max-w: 1200px;
+
+.container {
+	margin:0 auto;
+	width: 100%;
+	max-width: $container-max-w;
+}
+
+// .reduced-container{
+// 	max-width: $reduced-width;
+// }
+
+@mixin mazorca-bs-col {
+	position: relative;
+	min-height: 1px;
+  	padding-left: s();
+  	padding-right: s();
+  	float: left;
+}
+
+//nueva columna para print.php
+.col-xs-plus-6 {
+	@include mazorca-bs-col;
+	@include over(xs-plus) {
+		width: 50%;
+	}
+}
+//nueva columna para print.php
+.col-sm-minus-4 {
+	@include mazorca-bs-col;
+	@include over(sm-minus) {
+		width: 33.33333%;
+	}
+}

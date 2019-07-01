@@ -1,0 +1,6 @@
+.suscribete {
+	@include suscribeteComponent();
+}
+.suscribete.blanco {
+	@include suscribeteComponent(blanco);
+}

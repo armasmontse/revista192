@@ -1,0 +1,11 @@
+%imagen-page  {
+	cursor: pointer;
+	display: block;
+	margin-bottom: s(9/4, mb);
+	max-width: 100%;
+	@include under(sm) {
+		margin-left: auto;
+	    margin-right: auto;
+	    width: calc(100% - #{s(5)});
+	}
+}

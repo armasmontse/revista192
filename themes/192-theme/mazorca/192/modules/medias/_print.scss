@@ -1,0 +1,91 @@
+.print {
+	@include pageComponent(aqua);
+	$main-width: 560px;
+
+	// @debug mixin-exists(articulo);
+	//@include cols2;
+
+	.ttl {
+		@include under(xs) {
+			font-size: 30px;
+		}
+		&--print-preview{
+			color: #333;
+		    font-weight: bold;
+		    text-transform: uppercase;
+		    font-size: 15px;
+		    letter-spacing: 2px;
+		    line-height: lh();
+		    margin-bottom: 0;
+			font-family: f(sans);
+		}
+	}
+	.ano, .p {
+		margin-bottom: s(3);
+	}
+
+	.ano.revista {
+		// color: c();
+		font-family: f(sans);
+		font-size: 21px;
+		font-weight: 200;
+		text-align: center;
+		width: 100%;
+	}
+
+
+	.p.main {
+		max-width: $main-width;
+		text-align: center;
+		margin-left: auto;
+		margin-right: auto;
+		p {
+			font-size: 18px;
+		}
+	}
+	.imagen.revista {
+		position:relative;
+		margin-left: auto;
+		margin-right: auto;
+		max-width: $main-width;
+		width: 100%;
+	}
+	.imagen-container.revista {
+		max-width: 378px;
+	}
+
+	.imagen-container {
+		margin-bottom: s();
+		width: 100%;
+	}
+
+	.imagen-overlay {
+		$bgc: transparentize(c(), 0.4);
+		@include overlay($bgc, true );
+	}
+
+
+	.articulo {
+		&-container {
+			max-width: 740px;
+		}
+		@include articulo;
+		.ttl, .name {
+			line-height: 1;
+		}
+		.ttl {
+			font-family: f(serif);
+			font-size: 30px;
+			margin-bottom: s();
+		}
+		.name {
+			text-align: center;
+			margin-bottom: s();
+		}
+	}
+
+
+	.divisor {
+		border-width: 2px;
+	}
+}

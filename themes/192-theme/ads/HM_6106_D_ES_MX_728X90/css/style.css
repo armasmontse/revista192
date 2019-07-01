@@ -1,0 +1,109 @@
+body{
+	margin:0px;
+}
+
+#ad{
+	overflow: hidden;
+	-moz-user-select: -moz-none;
+	-khtml-user-select: none;
+	-webkit-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
+	cursor: pointer;
+}
+
+.size{
+	height:100%;
+	width:100%;
+}
+
+#banner{
+	position:absolute;
+	display: block;
+	visibility: visible;
+	width: 100%;
+}
+
+.logo{
+   	position: absolute;
+   	bottom: 0;
+	cursor: pointer;
+	background-size:contain;
+	background-repeat:no-repeat;
+	background-position:right;
+}
+.logo.hide {
+	opacity: 0;
+	filter : alpha(opacity=0);
+	transition-duration: .5s;
+}
+
+.logo.show {
+	transition-duration: .5s;
+	opacity: 1;
+	filter : alpha(opacity=100);
+}
+#frames {
+	position:relative;
+	margin:0 auto;
+}
+
+#back{
+	top:0px;
+	background-size:contain;
+	background-repeat:no-repeat;
+	width: 100%;
+}
+
+.top{
+	position:absolute;
+	top: 0px;
+	background-repeat:no-repeat;
+	opacity : 0;
+	filter : alpha(opacity=0);
+	transition-property: opacity;
+	background-size:contain;
+}
+
+.top.hide {
+	opacity: 0;
+	filter : alpha(opacity=0);
+	transition-duration: 0s;
+}
+
+.top.show {
+	transition-duration: .5s;
+	opacity: 1;
+	filter : alpha(opacity=100);
+}
+
+.title{
+	position:absolute;
+	top:0px;
+	opacity:0 ;
+	filter:alpha(opacity=0);
+}
+
+.title.show {
+	transition-duration: 2s;
+	opacity: 1;
+	filter : alpha(opacity=100);
+}
+
+.border{
+	position:absolute;
+ 	display: none;
+	top:0px;
+	left:0px;
+	border-style: solid;
+	border-width: 1px;
+}
+
+#clickScreen {
+	position: absolute;
+	display: block;
+	overflow: hidden;
+	height:90px;
+	width:728px;
+	cursor: pointer;
+}

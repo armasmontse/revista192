@@ -1,0 +1,19 @@
+/// Version Control
+
+///Prevents simple error that could lead to unintentional breaking of the code or the of a theme. 
+///This errors enforce the intended use of the framework, and lead to consistent use of the core within your theme and a proper relation between your active theme and other themes developed withing the framework. 
+///Proper version control with git or svn is also suggested.
+
+@import "_core";
+
+@if map-get($theme, theme-name) == '_blank' {
+	@error "\a ERROR: \a ATTEMPTING TO MODIFY _blank THEME \a The _blank theme is only to be used as a boilerplate. If you intend to you the \a contents of this theme please copy the folder and rename it with the name of your \a theme. \a \a Do make sure to go to [your theme`s folder]/_theme.scss in the root of your \a new theme and update the theme-name field. \a  \a IMPORTANT: While you are at it, it is  very strongly \a suggested that you create a new branch on git with your \a theme name before proceeding, this way you will not be modifing \a any other theme besides yours and you can be sure that any \a changes or additions to  the core will not be breaking anything."
+}
+
+@if map-get($core, version) !=  map-get($theme, core-version) {
+	@error  " \a ERROR:  \a WRONG VERSION OF THE THEME \a Upsss, you are using the wrong version of the core.  \a This theme was created using version #{map-get($core, version)} of the core.  \a The version of your core is #{map-get($theme, core-version)}"
+}
+
+@if map-get($core, active-theme) != map-get($theme, theme-name) {
+	@error " \a ERROR:  \a WRONG ACTIVE THEME \a The core you are using is not part of this theme.  \a Please update the active theme field in core/_core.scss before proceeding. \a IMPORTANT: It is  very strongly suggested that you create a \a new branch on git, with your theme name before  \a proceeding, this way you will not be modifing any  \a other theme besides yours and you can be sure that any changes \a or additions to the core will not be breaking anything. \a \a Your actual theme name is: #{map-get($theme, theme-name)}. \a The active theme of the core is #{map-get($core, active-theme)}"
+}

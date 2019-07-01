@@ -1,0 +1,50 @@
+.header {
+	height: 100%;
+	position: relative;
+
+
+	@at-root {
+		.header-container {
+			padding-top: s(2);
+			padding-bottom: s(2);
+			margin-bottom: s(2);
+			position: relative;
+			height: auto;
+
+			.home  & {
+				height: 356px;
+				margin-bottom: s(3);
+				@include under(sm) {
+					height: auto;
+				}
+			}
+		}
+
+		.home .header-img {
+			@include bg-cover();
+			background-repeat: no-repeat;
+		}
+	}
+
+	.logo {
+		display: inline-block;
+		text-align: center;
+		width: 279px;
+		margin: 0 auto;
+		position:relative;
+	    left: 1/2*33px;
+		@include under(sm) {
+			width: 200px;
+		    left: 1/2*25px;
+		}
+	}
+
+	.logo-container {
+		position: relative;
+		display: block;
+		margin-left: auto;
+		margin-right: auto;
+		width: auto;
+		text-align: center;
+	}
+}

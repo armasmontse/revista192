@@ -1,0 +1,24 @@
+$colors: (
+	base:	#333333,
+	negro: #000000,
+	aqua: #ddf6fb,
+	blanco: #fff,
+	crema: #fcf1d6,
+	rosita: #f5ebea,
+	gris-home: #d7d5d9,
+	gris: #ccc,
+	menu-dark: #1f1f1f,
+	purpura: #d0c7de,
+	single: #60646c,
+	titulo-single: #303030,
+	verdiazul: #bbd3ca
+	);
+
+$colorForeground: black;
+$colorBackground: white;
+$colorFeatured: rgb(1, 170, 101);
+$colorError: #8A1010;
+
+@function c($color:base) {
+	@return map-get($colors, $color);
+}

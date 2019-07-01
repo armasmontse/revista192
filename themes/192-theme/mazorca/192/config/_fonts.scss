@@ -1,0 +1,32 @@
+//_________________________ Config:Fuentes _________________________ \\
+
+/**
+ * Declare fonts using the Mixin
+ */
+
+//Playfair display 400
+//'SharpSansNoOne-Bold'
+//'SharpSansNoOne-Medium'
+//'SharpSansNoOne-SemiBold'
+
+@include declara-font-face(SharpSans, '../../fonts/SharpSansNoOne-Bold', bold);
+@include declara-font-face(SharpSans, '../../fonts/SharpSansNoOne-SemiBold', 600);
+@include declara-font-face(SharpSans, '../../fonts/SharpSansNoOne-Medium', 200);
+// @include declara-font-face(PlayfairDisplay, 'fonts/playfairdisplaysc-italic-webfont', normal, italic);
+@include declara-font-face(PlayfairDisplay, '../../fonts/playfairdisplay-regular-webfont', normal);
+// @include declara-font-face(PlayfairDisplay, 'fonts/playfairdisplaysc-bold-webfont', bold);
+
+
+/// Refer to font families through mapped variables.
+/// Font families must be written as lists, that is, between parenthesis.
+///
+
+	$serif-content-font-size: 16px;
+
+$fonts:( sans:	('SharpSans', sans-serif),
+		serif: 	('PlayfairDisplay', serif)
+	);
+
+@function f($font) {
+	@return map-get($fonts, $font);
+}

@@ -1,0 +1,103 @@
+@mixin anterioresComponent($bgc) {
+	$w:260px;
+	// width: $w;
+	@include under(sm) {
+		margin-right: auto;
+		margin-left: auto;
+	}
+	&__main-container {
+		height: 450px;
+		margin-left: auto;
+		margin-right: auto;
+		margin-bottom: s(2);
+		max-width: $w;
+	}
+
+	.fecha {
+		@extend %vertical-text;
+		font-size: 13px;
+		margin-bottom: 7px;
+		text-align: center;
+		width: auto;
+	}
+
+	&__main-ttl, &__ver-por-fechas {
+		@extend %title-anteriores;
+	}
+
+	&__ver-por-fechas {
+		text-align: right;
+		text-transform: none;
+	}
+
+	&__ttl {
+		@extend %title;
+		font-size: 32px;
+		height: 76px;
+		line-height: 38px;
+		letter-spacing: 1px;
+		text-align: center;
+		margin-bottom: -14px;
+		z-index: 1;
+	}
+	&__link{
+		@extend %link;
+		word-wrap: break-word;
+	}
+
+	.well {
+		background-color: c($bgc);
+		display: block;
+		height: 361px;
+		padding: 30px;
+		max-width: $w;
+	}
+
+	.img-logo-container {
+		position: relative;
+	}
+
+	.logo {
+		@extend %vertical-text;
+		position: absolute;
+		font-size: 11px;
+		line-height: 1;
+	}
+
+	.imagen {
+		height: 250px;
+		width: 167px;
+		margin-left: auto;
+		margin-right: 0;
+	}
+
+
+	.descripcion {
+		font-family: f(serif);
+		font-size: 12px;
+		font-weight: normal;
+		text-align: right;
+		position: relative;
+		top: -6px;
+	}
+
+		&__select {
+	    -moz-appearance: none;
+	    -webkit-appearance: none;
+		background: url('images/select-arrow.svg') no-repeat transparent;
+	    background-position: 100% 38%;
+		border: none;
+	    border-radius: 0;
+		display: block;
+		margin-left: auto;
+		text-align: right;
+		text-transform: none;
+	    width: 153px;
+	    margin-bottom: s(6);
+
+	    option {
+	    width: 153px;
+
+	    }
+	}
+}

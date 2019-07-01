@@ -1,0 +1,42 @@
+.interview {
+	@include pageComponent(verdiazul);
+
+	& &__ttl {
+		@extend %cat-single-ttl-sans
+	}
+
+	&__creditos {
+		text-align: center;
+		margin-bottom: s(3/2);
+		p {
+			font-family: f(serif);
+			font-size: 14px;
+			font-weight: normal;
+			line-height: 25px;
+		}
+	}
+
+	.p {
+		text-align: center;
+		p {
+			//margin-bottom: s(5/4);
+		}
+	}
+
+	.anterior {
+		@include anterioresComponent(verdiazul);
+	}
+
+	.divisor {
+		max-width: 100%;
+	}
+	.text-center {
+		p {
+			text-align: center;
+		}
+	}
+
+	.tags {
+		@include tagsComponent;
+	}
+}

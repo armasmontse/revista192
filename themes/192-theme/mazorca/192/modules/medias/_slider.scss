@@ -1,0 +1,21 @@
+.slider{
+    width: 100%;
+
+    &__nav--next {
+        font-family: f(sans);
+        font-size: 12px;
+        font-weight: 600;
+        padding-top: s();
+        text-align: right;
+        text-transform: uppercase;
+        &::selection {
+            background-color: transparent;
+        }
+    }
+}
+
+.swiper-pagination-bullet, .slider__pagination-bullet{
+    background-color: transparent;
+}
+
+
